@@ -1,0 +1,108 @@
+\documentclass{article}
+
+% ====================
+% 1. 导言区 (Preamble)
+% ====================
+\usepackage{ctex}       % [步骤1] 引入宏包：支持中文
+\usepackage{ulem}       % [步骤3] 引入宏包：支持删除线 (\sout)
+\usepackage{amsmath}    % [步骤6] 引入宏包：更好的数学公式支持
+\usepackage{graphicx}   % [步骤7] 引入宏包：支持插入图片
+
+\title{LaTeX 基础语法综合演示}
+\author{你的名字}
+\date{\today}           % 自动生成今天的日期
+
+% ====================
+% 2. 正文区 (Body)
+% ====================
+\begin{document}
+
+\maketitle % 生成标题、作者和日期
+
+% --- [步骤2 & 步骤3] 段落与字体 ---
+\section{段落与字体格式}
+这是第一段的第一句话。
+这是第一段的第二句话。（注意：代码里只敲一个回车，生成的文档里仍然是连在一起的，不会分段）
+
+这是第二段。（代码里敲两个回车空出一行，这里就是新段落，并且会自动缩进）
+
+在这段文字中，我们可以使用 \textbf{加粗}，\textit{斜体}，\underline{下划线}，以及 \sout{删除线}。\\
+这里使用了双反斜杠强制换行，\\ 但是并没有分段，所以这里不会有段首缩进。
+
+
+% ---[步骤4] 文章层次 ---
+\section{文章层次展示}
+这是一级标题下的内容。
+
+\subsection{二级标题示例}
+这是二级标题下的内容。
+
+\subsubsection{三级标题示例}
+这是三级标题下的内容。
+
+
+% --- [步骤5] 列表 ---
+\section{列表环境}
+
+\subsection{无序列表}
+去超市需要买：
+\begin{itemize}
+    \item 苹果
+    \item 香蕉
+    \item 橘子
+\end{itemize}
+
+\subsection{有序列表}
+把大象装进冰箱的步骤：
+\begin{enumerate}
+    \item 第一步：打开冰箱门
+    \item 第二步：把大象放进去
+    \item 第三步：关上冰箱门
+\end{enumerate}
+
+
+% --- [步骤6] 数学公式 ---
+\section{数学公式}
+这里是行内公式：著名的勾股定理是 $a^2 + b^2 = c^2$。
+
+下面是行间公式（它会自动单独占一行居中，并带上编号）：
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+
+再展示一些常用的数学符号：求和公式 $\sum_{i=1}^{n} i$，微积分 $\int_{a}^{b} f(x) dx$，以及希腊字母 $\alpha, \beta, \gamma, \pi, \Omega$。
+
+
+% --- [步骤7] 插入图片 ---
+\section{插入图片}
+% 注意：example-image-a 是 LaTeX 自带的测试占位图，所以你不需要上传文件也能编译成功。
+% 在实际写文章时，请把你上传的图片文件名（比如 photo.jpg）替换掉 example-image-a。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image-a} 
+    \caption{这是一张测试图片}
+    \label{fig:my_test_photo} % 打个标签
+\end{figure}
+
+就像我们在图 \ref{fig:my_test_photo} 中看到的那样，LaTeX 会自动处理图片编号，使用 ref 命令就可以交叉引用它。
+
+
+% --- [步骤8] 插入表格 ---
+\section{插入表格}
+\begin{table}[htbp]
+    \centering
+    \caption{简单的学生成绩表}
+    \label{tab:my_table} % 给表格打个标签
+    \begin{tabular}{|c|c|c|} % 3列，c表示居中，| 表示竖线
+        \hline               % \hline 表示横线
+        姓名 & 数学 & 语文 \\  
+        \hline
+        张三 & 90 & 85 \\
+        李四 & 95 & 92 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+同理，表格也可以被引用。表 \ref{tab:my_table} 就是我们刚刚用代码画出来的表格。
+
+\end{document}
